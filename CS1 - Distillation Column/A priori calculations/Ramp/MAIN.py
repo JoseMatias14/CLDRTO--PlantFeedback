@@ -129,7 +129,7 @@ ax2.plot(timeArray,dist2Approx,'c:', linewidth=4)
 ax2.plot(timeArray,dist2,'k', linewidth=4)
 
 ax2.set_ylabel(r'$\alpha \ [-]$', fontsize=12)
-ax2.set_xlabel('t [min]', fontsize=12)
+ax2.set_xlabel('time [min]', fontsize=12)
 ax2.set_title('Rel. Volatility disturbance', fontsize=12)
 ax2.minorticks_on()
 ax2.xaxis.set_major_locator(MultipleLocator(majorR))

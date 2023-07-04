@@ -166,26 +166,6 @@ for jj = 1:nx
     end
 end
 
-% plotting sensitivities for OF
-figure(4)
-sgtitle('Objective Function')
-for ii = 1:5
-    subplot(2,3,ii)
-    hold on
-    plot(tsimgrid,SL_rray(ii,:),'kx','LineWidth',1.5)
-
-    xlim([0,Tsim])
-
-    xlabel('t [h]')
-    ylabel(thetaLab{ii})
-
-    grid on
-end
-
-% saving results
-save('CSTRsensitivities','tsimgrid','SX_Array','SL_rray')
-
-
 %% Rank parameter significance (Step3)
 
 % creating variables for saving

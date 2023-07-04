@@ -129,8 +129,8 @@ dataBundle.append(data_3_DRTO)
 nData = 3
 
 methodLabel = ["bias", "st", "st + par"]
-colorMethod = ['g', 'b', 'r']
-markerMethod = ['go', 'bd', 'rv']
+colorMethod = ['b', 'g', 'r']
+markerMethod = ['bo', 'gd', 'rv']
 
 #%% MVS
 fig1, ax = plt.subplots()
@@ -153,7 +153,8 @@ ax.set(xlabel='time [min]', ylabel='L [kmol/min]')
 fig2, ax = plt.subplots()
 
 for ii in range(nData):
-    ax.plot(timeArray[0:simTime:deltaPlot], dataBundle[ii][0][1,0:simTime:deltaPlot],colorMethod[ii], label = methodLabel[ii], linewidth=4)
+    ax.plot(timeArray[0:simTime:deltaPlot], 
+            dataBundle[ii][0][1,0:simTime:deltaPlot],colorMethod[ii],drawstyle='steps', label = methodLabel[ii], linewidth=4)
 
 ax.xaxis.set_major_locator(MultipleLocator(majorR))
 ax.xaxis.set_minor_locator(MultipleLocator(minorR))
@@ -352,6 +353,8 @@ ax.yaxis.set_tick_params(which='minor', bottom=False)
 ax.grid(b=True, which='major', linestyle='-')
 ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)   
 
+ax.legend(loc='best')
+
 # saving figure 
 if savePlot is True:
     fig10.savefig("MHEtime_rampDisturbances.pdf", format="pdf", bbox_inches="tight")
@@ -467,7 +470,7 @@ if savePlot is True:
 fig12, (ax1, ax2) = plt.subplots(2, sharex=True)
 fig12.suptitle('Computed Bias')
 
-ax1.plot(timeEstArray, dataBundle[0][13][10,:],'gx',markersize=3)
+ax1.plot(timeEstArray, dataBundle[0][13][10,:],'bx',markersize=3)
 ax1.set(ylabel='$x_D$')
 ax1.minorticks_on()
 ax1.xaxis.set_major_locator(MultipleLocator(majorR))
@@ -476,7 +479,7 @@ ax1.yaxis.set_tick_params(which='minor', bottom=False)
 ax1.grid(b=True, which='major', linestyle='-')
 ax1.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
-ax2.plot(timeEstArray, dataBundle[0][13][1,:],'gx',markersize=3)
+ax2.plot(timeEstArray, dataBundle[0][13][1,:],'bx',markersize=3)
 ax2.set(xlabel='time [min]', ylabel='$x_B$')
 ax2.minorticks_on()
 ax2.xaxis.set_major_locator(MultipleLocator(majorR))
@@ -495,7 +498,7 @@ fig13, (ax1, ax2, ax3) = plt.subplots(3, sharex=True)
 fig13.suptitle('States: Estimated vs. true')
 
 ax1.plot(timeArray[0:simTime:deltaPlot], dataBundle[1][4][34,0:simTime:deltaPlot],'k:', label ='True', linewidth=4)
-ax1.plot(timeEstArray, dataBundle[1][12][34,:],'bx',markersize=3, label ='Est.')
+ax1.plot(timeEstArray, dataBundle[1][12][34,:],'gx',markersize=3, label ='Est.')
 ax1.set(ylabel='$x_{35}$')
 ax1.minorticks_on()
 ax1.xaxis.set_major_locator(MultipleLocator(majorR))
@@ -505,7 +508,7 @@ ax1.grid(b=True, which='major', linestyle='-')
 ax1.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 ax2.plot(timeArray[0:simTime:deltaPlot], dataBundle[1][4][2,0:simTime:deltaPlot],'k:', label ='True', linewidth=4)
-ax2.plot(timeEstArray, dataBundle[1][12][2,:],'bx',markersize=3,label ='Est.')
+ax2.plot(timeEstArray, dataBundle[1][12][2,:],'gx',markersize=3,label ='Est.')
 ax2.set(ylabel='$x_3$')
 ax2.minorticks_on()
 ax2.xaxis.set_major_locator(MultipleLocator(majorR))
@@ -515,7 +518,7 @@ ax2.grid(b=True, which='major', linestyle='-')
 ax2.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 ax3.plot(timeArray[0:simTime:deltaPlot], dataBundle[1][4][77,0:simTime:deltaPlot],'k:', label ='True', linewidth=4)
-ax3.plot(timeEstArray, dataBundle[1][12][77,:],'bx',markersize=3, label ='Est.')
+ax3.plot(timeEstArray, dataBundle[1][12][77,:],'gx',markersize=3, label ='Est.')
 ax3.set(xlabel='time [min]',ylabel='$M_{37}$')
 ax3.minorticks_on()
 ax3.xaxis.set_major_locator(MultipleLocator(majorR))
@@ -600,5 +603,55 @@ if savePlot is True:
     fig15.savefig('xStaPar_rampDisturbances.tif', format='tif', bbox_inches="tight", dpi=600)
 
 
+#%% Fraction and Molar holdup profiles along the column at a given time step
+fig16, axs = plt.subplots(1,3, sharey=True)
+fig16.suptitle('Fraction of A profile')
+# Set the ticks and ticklabels for all axes 
+plt.setp(axs, yticks=range(1,par['NT']+1,5))
 
+columnTray = range(1,par['NT']+1)
 
+timePlot =30*12 
+
+for ii in range(nData): 
+    axs[ii].plot(dataBundle[ii][4][0:par['NT'],timePlot],columnTray,'k:',linewidth=4)
+    axs[ii].plot(dataBundle[ii][12][0:par['NT'],int(timePlot/12)],columnTray,colorMethod[ii],linewidth=4)
+
+    axs[ii].minorticks_on()
+    axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
+    axs[ii].grid(b=True, which='major', linestyle='-')
+    axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+    
+    axs[ii].set(title=methodLabel[ii])
+    axs[ii].set(xlabel='$x_A$ [-]')
+     
+axs[0].set(ylabel='# tray') 
+
+# saving figure 
+if savePlot is True:
+    fig16.savefig("x_profile_rampDisturbances.pdf", format="pdf", bbox_inches="tight")
+    fig16.savefig('x_profile_rampDisturbances.tif', format='tif', bbox_inches="tight", dpi=600)
+
+fig17, axs = plt.subplots(1,3, sharey=True)
+fig17.suptitle('Molar holdup profile')
+# Set the ticks and ticklabels for all axes 
+plt.setp(axs, yticks=range(1,par['NT']+1,5),xticks=[0.4995, 0.501])
+
+for ii in range(nData): 
+    axs[ii].plot(dataBundle[ii][4][par['NT']:-1,timePlot],columnTray[:],'k:',linewidth=4)
+    axs[ii].plot(dataBundle[ii][12][par['NT']:-1,int(timePlot/12)],columnTray[:],colorMethod[ii],linewidth=4)
+
+    axs[ii].minorticks_on()
+    axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
+    axs[ii].grid(b=True, which='major', linestyle='-')
+    axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+    axs[ii].set_xlim([0.499, 0.502])
+    
+    axs[ii].set(title=methodLabel[ii])
+    axs[ii].set(xlabel='$M$ [kmol]')
+     
+axs[0].set(ylabel='# Tray') 
+ 
+if savePlot is True:
+    fig17.savefig("m_profile_rampDisturbances.pdf", format="pdf", bbox_inches="tight")
+    fig17.savefig('m_profile_rampDisturbances.tif', format='tif', bbox_inches="tight", dpi=600)

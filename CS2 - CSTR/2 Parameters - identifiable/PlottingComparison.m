@@ -4,8 +4,8 @@ close all
 
 
     
-    a = load("test2_MHE_2p_un.mat");
-    b = load("test2_BIAS_2p.mat");
+    a = load("test3_MHE_2p.mat");
+    b = load("test3_BIAS_2p.mat");
 
     % time array
     tsimgrid = linspace(0, a.tEnd, a.nEnd+1);
