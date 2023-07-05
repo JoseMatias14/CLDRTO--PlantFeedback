@@ -247,7 +247,7 @@ for pp in range(2): #parameters
 #%% plotting data
 
 # Slices
-ppLabel = ['$z_f$ [-]','alpha [-]']
+ppLabel = ['$z_f$ [-]',r'$\alpha$ [-]']
 
 # color
 plasma=cm.get_cmap('plasma', 5*(simTime+1))

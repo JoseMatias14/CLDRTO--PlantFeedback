@@ -71,7 +71,7 @@ thetaLab = ['$\Delta H$ [1e3 kcal/kmol]','$\Psi$ [-]']
 methodLabel = ["bias", "st + par"]
 
 colorMethod = ['b', 'r']
-markerMethod = ['bo', 'rv']
+markerMethod = ['bo', 'ro']
 
     
 #%% STATES 
@@ -171,7 +171,7 @@ fig4, axs = plt.subplots(2, sharex=True)
 fig4.suptitle('Computed Bias') 
 
 for ii in range(2): 
-    axs[ii].plot(tgrid,a['biasModelArray'][ii,:],colorMethod[0], label =methodLabel[0],linewidth=4)
+    axs[ii].plot(tgrid,a['biasModelArray'][ii,:],markerMethod[0], label =methodLabel[0],linewidth=4)
     
     axs[ii].minorticks_on()
     axs[ii].xaxis.set_major_locator(MultipleLocator(majorR))
