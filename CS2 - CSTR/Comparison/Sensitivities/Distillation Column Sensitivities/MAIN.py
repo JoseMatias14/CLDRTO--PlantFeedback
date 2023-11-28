@@ -295,7 +295,7 @@ for kk in range(1,simTime,10*12):
     times = kk*np.ones(multLin)
     ax.plot3D(times, thetaLin[0], XLin_xD[0,:,kk],linewidth=3,color=plasma.colors[5*kk])
  
-ax.set(xlabel='tim [min]',ylabel='$z_f$',zlabel='$x_D$')
+ax.set(xlabel='time [min]',ylabel='$z_f$',zlabel='$x_D$')
 
 mystring = []
 
@@ -316,7 +316,7 @@ for kk in range(1,simTime,10*12):
     times = kk*np.ones(multLin)
     ax.plot3D(times, thetaLin[1], XLin_xD[1,:,kk],linewidth=3,color=plasma.colors[5*kk])
  
-ax.set(xlabel='tim [min]',ylabel=r'$\alpha$',zlabel='$x_D$')
+ax.set(xlabel='time [min]',ylabel=r'$\alpha$',zlabel='$x_D$')
 
 mystring = []
 

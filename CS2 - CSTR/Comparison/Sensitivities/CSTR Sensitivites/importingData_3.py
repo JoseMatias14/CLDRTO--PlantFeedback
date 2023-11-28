@@ -145,7 +145,7 @@ for kk in range(1,int(a['N']),2):
     times = kk*np.ones(int(a['multLin']))
     ax.plot3D(times, a['thetaLin'][0,:], a['XLin_T'][0,:,kk],linewidth=3,color=plasma.colors[50*kk])
  
-ax.set(xlabel='tim [h]',ylabel='$\Delta U$ [1e3 kcal/kmol]',zlabel='$T$ [K]')
+ax.set(xlabel='time [h]',ylabel='$\Delta U$ [1e3 kcal/kmol]',zlabel='$T$ [K]')
 
 mystring = []
 
@@ -175,14 +175,14 @@ plt.savefig('sensT_psi_3.tif', format='tif', bbox_inches="tight", dpi=600)
 #%%
 ax = plt.figure().add_subplot(projection='3d')
 
-plasma=cm.get_cmap('plasma', 5*(int(a['N'])+1))
+#plasma=cm.get_cmap('plasma', 5*(int(a['N'])+1))
 
 ##plots
 for kk in range(1,int(a['N']),2):
     times = kk*np.ones(int(a['multLin']))
     ax.plot3D(times, a['thetaLin'][0,:], a['XLin_CA'][0,:,kk],linewidth=3,color=plasma.colors[50*kk])
  
-ax.set(xlabel='tim [h]',ylabel='$\Delta U$ [1e3 kcal/kmol]',zlabel='$C_A$ [kmol]')
+ax.set(xlabel='time [h]',ylabel='$\Delta U$ [1e3 kcal/kmol]',zlabel='$C_A$ [kmol]')
 
 plt.xticks(np.arange(0.0, 20.0 + 1.0, step=4.0),labels=mystring)
 

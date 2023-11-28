@@ -741,9 +741,9 @@ def ControlTuning():
 
     # 3. One-point control (xD - L) #
     # Proportional Gain
-    KcL = - 30 # no delay (SIMC) = 30 | delay (SIMC) = 7
+    KcL = - 7 # no delay (SIMC) = 30 | delay (SIMC) = 7
     # Integral Constant
-    tauL = 13.5  # no delay (SIMC) = 13.5 | delay (SIMC) = 180
+    tauL = 180  # no delay (SIMC) = 13.5 | delay (SIMC) = 180
     # Nominal concentration 
     xDs = 0.989   # [kmol A/kmol]
     # Nominal reflux

@@ -3,7 +3,7 @@
 # email: assumpcj@macmaster.ca 
 # April 2022; Last revision: 15-06-2022
 # 
-# Code runs DRTO cycle (Open-loop): 
+# Code runs DRTO cycle (Open/Closed-loop): 
 # modelUpdate = 0 (perfect information) 
 #               1 (bias update)
 #               2 (state estimation via MHE)
