@@ -26,7 +26,7 @@ import statistics
 ################
 # LOADING DATA #
 ################
-b = scipy.io.loadmat('MC_parameters_CLv2_med.mat')
+b = scipy.io.loadmat('MC_parameters_CLv3_med.mat')
 
 
 # Do you want to save the plots?
@@ -54,8 +54,8 @@ for ii in range(3):
     axs[ii].xaxis.set_minor_locator(MultipleLocator(minorR))
     axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
     axs[ii].set_xlim([0, b['tEnd']]) 
-    axs[ii].grid(b=True, which='major', linestyle='-')
-    axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+    axs[ii].grid(visible=True, which='major', linestyle='-')
+    axs[ii].grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
     
     axs[ii].set(ylabel=uLab[ii])
      
@@ -77,8 +77,8 @@ for ii in range(3):
     axs[ii].xaxis.set_minor_locator(MultipleLocator(minorR))
     axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
     axs[ii].set_xlim([0, b['tEnd']]) 
-    axs[ii].grid(b=True, which='major', linestyle='-')
-    axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+    axs[ii].grid(visible=True, which='major', linestyle='-')
+    axs[ii].grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
     
     axs[ii].set(ylabel=uLab[ii])
      
@@ -98,8 +98,8 @@ for kk in range(3 + np.int8(b['nSim'].item())):
 ax.xaxis.set_major_locator(MultipleLocator(majorR))
 ax.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax.yaxis.set_tick_params(which='minor', bottom=False)
-ax.grid(b=True, which='major', linestyle='-')
-ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax.grid(visible=True, which='major', linestyle='-')
+ax.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 
 fig5.suptitle('Objective Function - Effect of $\Delta H$')
@@ -118,8 +118,8 @@ for kk in range(3 + np.int8(b['nSim'].item())):
 ax.xaxis.set_major_locator(MultipleLocator(majorR))
 ax.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax.yaxis.set_tick_params(which='minor', bottom=False)
-ax.grid(b=True, which='major', linestyle='-')
-ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax.grid(visible=True, which='major', linestyle='-')
+ax.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 
 fig6.suptitle('Objective Function - Effect of $\Psi$')
@@ -150,15 +150,15 @@ fig7.suptitle('Parameter Distribution')
 
 ax1.axvline(x=theta_nom[0], color='k', linestyle=':', linewidth=2)
 ax1.plot(theta_tgrid_0,pdf_0,linewidth=4)
-ax1.grid(b=True, which='major', linestyle='-')
-ax1.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax1.grid(visible=True, which='major', linestyle='-')
+ax1.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 ax1.set(xlabel='$\Delta H$ [1e3 kcal/kmol]', ylabel= 'pdf')
 
 
 ax2.axvline(x=theta_nom[1], color='k', linestyle=':', linewidth=2)
 ax2.plot(theta_tgrid_1,pdf_1,linewidth=4)
-ax2.grid(b=True, which='major', linestyle='-')
-ax2.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax2.grid(visible=True, which='major', linestyle='-')
+ax2.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 ax2.set_xticks([-17.585,-17.5871,-17.59])
 ax2.set_xticklabels([-17.585,-17.587,-17.589])
 ax2.set(xlabel='$\Psi$ [-]')

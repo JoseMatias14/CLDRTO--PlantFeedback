@@ -136,13 +136,13 @@ markerMethod = ['bo', 'gd', 'rv']
 fig1, ax = plt.subplots()
 
 for ii in range(nData):
-    ax.plot(timeArray[0:simTime:deltaPlot], dataBundle[ii][0][0,0:simTime:deltaPlot],colorMethod[ii], label =methodLabel[ii], linewidth=4)
+    ax.plot(timeArray[0:simTime:deltaPlot], dataBundle[ii][0][0,0:simTime:deltaPlot],colorMethod[ii], label =methodLabel[ii], linewidth=2)
 
 ax.xaxis.set_major_locator(MultipleLocator(majorR))
 ax.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax.yaxis.set_tick_params(which='minor', bottom=False)
-ax.grid(b=True, which='major', linestyle='-')
-ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax.grid(visible=True, which='major', linestyle='-')
+ax.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 ax.legend(loc='best')
 
@@ -154,13 +154,13 @@ fig2, ax = plt.subplots()
 
 for ii in range(nData):
     ax.plot(timeArray[0:simTime:deltaPlot], 
-            dataBundle[ii][0][1,0:simTime:deltaPlot],colorMethod[ii],drawstyle='steps', label = methodLabel[ii], linewidth=4)
+            dataBundle[ii][0][1,0:simTime:deltaPlot],colorMethod[ii],drawstyle='steps', label = methodLabel[ii], linewidth=2)
 
 ax.xaxis.set_major_locator(MultipleLocator(majorR))
 ax.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax.yaxis.set_tick_params(which='minor', bottom=False)
-ax.grid(b=True, which='major', linestyle='-')
-ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax.grid(visible=True, which='major', linestyle='-')
+ax.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 ax.legend(loc='best')
 
@@ -179,13 +179,13 @@ if savePlot is True:
 fig3, ax = plt.subplots()
 
 for ii in range(nData):
-    ax.plot(timeArray[0:simTime:deltaPlot], dataBundle[ii][0][2,0:simTime:deltaPlot],colorMethod[ii], label =methodLabel[ii], linewidth=4)
+    ax.plot(timeArray[0:simTime:deltaPlot], dataBundle[ii][0][2,0:simTime:deltaPlot],colorMethod[ii], label =methodLabel[ii], linewidth=2)
 
 ax.xaxis.set_major_locator(MultipleLocator(majorR))
 ax.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax.yaxis.set_tick_params(which='minor', bottom=False)
-ax.grid(b=True, which='major', linestyle='-')
-ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax.grid(visible=True, which='major', linestyle='-')
+ax.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 ax.legend(loc='best')
 
@@ -196,13 +196,13 @@ ax.set(xlabel='time [min]', ylabel='D [kmol/min]')
 fig4, ax = plt.subplots()
 
 for ii in range(nData):
-    ax.plot(timeArray[0:simTime:deltaPlot], dataBundle[ii][0][3,0:simTime:deltaPlot],colorMethod[ii], label =methodLabel[ii], linewidth=4)
+    ax.plot(timeArray[0:simTime:deltaPlot], dataBundle[ii][0][3,0:simTime:deltaPlot],colorMethod[ii], label =methodLabel[ii], linewidth=2)
     
 ax.xaxis.set_major_locator(MultipleLocator(majorR))
 ax.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax.yaxis.set_tick_params(which='minor', bottom=False)
-ax.grid(b=True, which='major', linestyle='-')
-ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax.grid(visible=True, which='major', linestyle='-')
+ax.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 ax.set_ylim([0.0, 1.0]) 
 
@@ -223,15 +223,15 @@ if savePlot is True:
 
 # for ii in range(nData):
     
-#     axs[ii].plot(timeArray[0:simTime:deltaPlot],dataBundle[ii][8][0:simTime:deltaPlot],colorMethod[ii],linewidth=4)
+#     axs[ii].plot(timeArray[0:simTime:deltaPlot],dataBundle[ii][8][0:simTime:deltaPlot],colorMethod[ii],linewidth=2)
     
 #     axs[ii].minorticks_on()
 #     axs[ii].xaxis.set_major_locator(MultipleLocator(majorR))
 #     axs[ii].xaxis.set_minor_locator(MultipleLocator(minorR))
 #     axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
 #     axs[ii].set_ylim([0.0, 1.0]) 
-#     axs[ii].grid(b=True, which='major', linestyle='-')
-#     axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+#     axs[ii].grid(visible=True, which='major', linestyle='-')
+#     axs[ii].grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
     
 #     axs[ii].set(ylabel=methodLabel[ii])
      
@@ -248,14 +248,14 @@ if savePlot is True:
 # fig6.suptitle('Cummulative Profit Difference [$]')
 
 # for ii in range(1,nData):
-#         ax.plot(timeArray[0:simTime:deltaPlot], np.cumsum(dataBundle[ii][8][0:simTime:deltaPlot] - dataBundle[0][8][0:simTime:deltaPlot], dtype=float)/12,colorMethod[ii], label = methodLabel[ii], linewidth=4)
+#         ax.plot(timeArray[0:simTime:deltaPlot], np.cumsum(dataBundle[ii][8][0:simTime:deltaPlot] - dataBundle[0][8][0:simTime:deltaPlot], dtype=float)/12,colorMethod[ii], label = methodLabel[ii], linewidth=2)
 
 # ax.xaxis.set_major_locator(MultipleLocator(majorR))
 # ax.xaxis.set_minor_locator(MultipleLocator(minorR))
 # ax.yaxis.set_tick_params(which='minor', bottom=False)
 # ax.set_ylim([-0.1, 2.0])
-# ax.grid(b=True, which='major', linestyle='-')
-# ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+# ax.grid(visible=True, which='major', linestyle='-')
+# ax.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 # ax.set(xlabel='time [min]', ylabel='sum(Profit dif) [$]')  
 # ax.legend(loc='best')
 
@@ -269,17 +269,18 @@ fig7, axs = plt.subplots(3, sharex=True)
 fig7.suptitle('Top Constraint')
 
 for ii in range(nData): 
-    axs[ii].plot(timeArray[0:simTime:deltaPlot],dataBundle[ii][4][par['NT'] - 1,0:simTime:deltaPlot],colorMethod[ii],linewidth=4)
+    axs[ii].plot(timeArray[0:simTime:deltaPlot],dataBundle[ii][4][par['NT'] - 1,0:simTime:deltaPlot],colorMethod[ii],linewidth=2)
     
     axs[ii].minorticks_on()
     axs[ii].xaxis.set_major_locator(MultipleLocator(majorR))
     axs[ii].xaxis.set_minor_locator(MultipleLocator(minorR))
     axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
     axs[ii].set_ylim([0.98, 1.00]) 
-    axs[ii].grid(b=True, which='major', linestyle='-')
-    axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+    axs[ii].grid(visible=True, which='major', linestyle='-')
+    axs[ii].grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
     
-    axs[ii].set(ylabel=methodLabel[ii])
+    #axs[ii].set(ylabel=methodLabel[ii])
+    axs[ii].set(ylabel='$x_D$ [-]')
      
 axs[nData-1].set(xlabel='time [min]') 
 
@@ -292,18 +293,19 @@ fig8, axs = plt.subplots(3, sharex=True)
 fig8.suptitle('Bottom product purity (unconstrained)')
 
 for ii in range(nData): 
-    axs[ii].plot(timeArray[0:simTime:deltaPlot],dataBundle[ii][4][0,0:simTime:deltaPlot],colorMethod[ii],linewidth=4)
+    axs[ii].plot(timeArray[0:simTime:deltaPlot],dataBundle[ii][4][0,0:simTime:deltaPlot],colorMethod[ii],linewidth=2)
     
     axs[ii].minorticks_on()
     axs[ii].xaxis.set_major_locator(MultipleLocator(majorR))
     axs[ii].xaxis.set_minor_locator(MultipleLocator(minorR))
     axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
     axs[ii].set_ylim([0.005, 0.075]) 
-    axs[ii].grid(b=True, which='major', linestyle='-')
-    axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+    axs[ii].grid(visible=True, which='major', linestyle='-')
+    axs[ii].grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
     
-    axs[ii].set(ylabel=methodLabel[ii])
-     
+    #axs[ii].set(ylabel=methodLabel[ii])
+    axs[ii].set(ylabel='$x_B$ [-]')
+    
 axs[nData-1].set(xlabel='time [min]') 
  
 if savePlot is True:
@@ -332,8 +334,8 @@ for ii in range(2):
     axs[ii].xaxis.set_major_locator(MultipleLocator(majorR))
     axs[ii].xaxis.set_minor_locator(MultipleLocator(minorR))
     axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
-    axs[ii].grid(b=True, which='major', linestyle='-')
-    axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+    axs[ii].grid(visible=True, which='major', linestyle='-')
+    axs[ii].grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
     
 #%% Estimation Solution time
 fig10, ax = plt.subplots()
@@ -350,8 +352,8 @@ ax.minorticks_on()
 ax.xaxis.set_major_locator(MultipleLocator(majorR))
 ax.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax.yaxis.set_tick_params(which='minor', bottom=False)
-ax.grid(b=True, which='major', linestyle='-')
-ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)   
+ax.grid(visible=True, which='major', linestyle='-')
+ax.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)   
 
 ax.legend(loc='best')
 
@@ -386,13 +388,13 @@ fig11, ax = plt.subplots()
 fig11.suptitle('L/V ratio')
 
 for ii in range(nData): 
-    ax.plot(timeArray[0:simTime:deltaPlot],dataBundle[ii][0][0,0:simTime:deltaPlot]/dataBundle[ii][0][1,0:simTime:deltaPlot],colorMethod[ii],label =methodLabel[ii],linewidth=4)
+    ax.plot(timeArray[0:simTime:deltaPlot],dataBundle[ii][0][0,0:simTime:deltaPlot]/dataBundle[ii][0][1,0:simTime:deltaPlot],colorMethod[ii],label =methodLabel[ii],linewidth=2)
 
 ax.xaxis.set_major_locator(MultipleLocator(majorR))
 ax.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax.yaxis.set_tick_params(which='minor', bottom=False)
-ax.grid(b=True, which='major', linestyle='-')
-ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax.grid(visible=True, which='major', linestyle='-')
+ax.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 ax.legend(loc='best')
 
@@ -404,7 +406,7 @@ alphaC = np.array([0.03,0.02,0.05])
 alph = np.concatenate((alphaR,-alphaC))
 
 fig12, axs = plt.subplots(3, sharex=True)
-fig12.suptitle('Instantaneous Profit [$/min]')
+fig12.suptitle('Instantaneous Profit')
 
 
 for ii in range(nData): 
@@ -426,16 +428,16 @@ for ii in range(nData):
     if ii == 1: tempOF_sta = tempOF
     if ii == 2: tempOF_staPar = tempOF
     
-    axs[ii].plot(timeArray[0:simTime:deltaPlot], tempOF[0:simTime:deltaPlot], colorMethod[ii], linewidth=4)    
+    axs[ii].plot(timeArray[0:simTime:deltaPlot], tempOF[0:simTime:deltaPlot], colorMethod[ii], linewidth=2)    
     axs[ii].minorticks_on()
     axs[ii].xaxis.set_major_locator(MultipleLocator(majorR))
     axs[ii].xaxis.set_minor_locator(MultipleLocator(minorR))
     axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
     axs[ii].set_ylim([0.0, 1.5]) 
-    axs[ii].grid(b=True, which='major', linestyle='-')
-    axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+    axs[ii].grid(visible=True, which='major', linestyle='-')
+    axs[ii].grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
     
-    axs[ii].set(ylabel=methodLabel[ii])
+    axs[ii].set(ylabel='$\phi$ [\$/min]')
      
 axs[nData-1].set(xlabel='time [min]') 
 
@@ -449,15 +451,15 @@ fig13, ax = plt.subplots()
 #fig6, axs = plt.subplots(3, sharex=True)
 fig13.suptitle('Cummulative Profit Difference [$]')
 
-ax.plot(timeArray[0:simTime:deltaPlot], np.cumsum(tempOF_sta[0:simTime:deltaPlot] - tempOF_bias[0:simTime:deltaPlot], dtype=float)/12,colorMethod[1], label = methodLabel[1], linewidth=4)
-ax.plot(timeArray[0:simTime:deltaPlot], np.cumsum(tempOF_staPar[0:simTime:deltaPlot] - tempOF_bias[0:simTime:deltaPlot], dtype=float)/12,colorMethod[2], label = methodLabel[2], linewidth=4)
+ax.plot(timeArray[0:simTime:deltaPlot], np.cumsum(tempOF_sta[0:simTime:deltaPlot] - tempOF_bias[0:simTime:deltaPlot], dtype=float)/12,colorMethod[1], label = methodLabel[1], linewidth=2)
+ax.plot(timeArray[0:simTime:deltaPlot], np.cumsum(tempOF_staPar[0:simTime:deltaPlot] - tempOF_bias[0:simTime:deltaPlot], dtype=float)/12,colorMethod[2], label = methodLabel[2], linewidth=2)
 
 ax.xaxis.set_major_locator(MultipleLocator(majorR))
 ax.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax.yaxis.set_tick_params(which='minor', bottom=False)
 ax.set_ylim([-0.1, 2.0])
-ax.grid(b=True, which='major', linestyle='-')
-ax.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax.grid(visible=True, which='major', linestyle='-')
+ax.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 ax.set(xlabel='time [min]', ylabel='$\sum \Phi_{diff} [\$]$')  
 ax.legend(loc='best')
 
@@ -476,8 +478,8 @@ ax1.minorticks_on()
 ax1.xaxis.set_major_locator(MultipleLocator(majorR))
 ax1.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax1.yaxis.set_tick_params(which='minor', bottom=False)
-ax1.grid(b=True, which='major', linestyle='-')
-ax1.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax1.grid(visible=True, which='major', linestyle='-')
+ax1.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 ax2.plot(timeEstArray, dataBundle[0][13][1,:],'bx',markersize=3)
 ax2.set(xlabel='time [min]', ylabel='$x_B$')
@@ -485,8 +487,8 @@ ax2.minorticks_on()
 ax2.xaxis.set_major_locator(MultipleLocator(majorR))
 ax2.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax2.yaxis.set_tick_params(which='minor', bottom=False)
-ax2.grid(b=True, which='major', linestyle='-')
-ax2.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax2.grid(visible=True, which='major', linestyle='-')
+ax2.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 # saving figure 
 if savePlot is True:
@@ -497,35 +499,35 @@ if savePlot is True:
 fig13, (ax1, ax2, ax3) = plt.subplots(3, sharex=True)
 fig13.suptitle('States: Estimated vs. true')
 
-ax1.plot(timeArray[0:simTime:deltaPlot], dataBundle[1][4][34,0:simTime:deltaPlot],'k:', label ='True', linewidth=4)
+ax1.plot(timeArray[0:simTime:deltaPlot], dataBundle[1][4][34,0:simTime:deltaPlot],'k:', label ='True', linewidth=2)
 ax1.plot(timeEstArray, dataBundle[1][12][34,:],'gx',markersize=3, label ='Est.')
 ax1.set(ylabel='$x_{35}$')
 ax1.minorticks_on()
 ax1.xaxis.set_major_locator(MultipleLocator(majorR))
 ax1.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax1.yaxis.set_tick_params(which='minor', bottom=False)
-ax1.grid(b=True, which='major', linestyle='-')
-ax1.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax1.grid(visible=True, which='major', linestyle='-')
+ax1.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
-ax2.plot(timeArray[0:simTime:deltaPlot], dataBundle[1][4][2,0:simTime:deltaPlot],'k:', label ='True', linewidth=4)
+ax2.plot(timeArray[0:simTime:deltaPlot], dataBundle[1][4][2,0:simTime:deltaPlot],'k:', label ='True', linewidth=2)
 ax2.plot(timeEstArray, dataBundle[1][12][2,:],'gx',markersize=3,label ='Est.')
 ax2.set(ylabel='$x_3$')
 ax2.minorticks_on()
 ax2.xaxis.set_major_locator(MultipleLocator(majorR))
 ax2.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax2.yaxis.set_tick_params(which='minor', bottom=False)
-ax2.grid(b=True, which='major', linestyle='-')
-ax2.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax2.grid(visible=True, which='major', linestyle='-')
+ax2.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
-ax3.plot(timeArray[0:simTime:deltaPlot], dataBundle[1][4][77,0:simTime:deltaPlot],'k:', label ='True', linewidth=4)
+ax3.plot(timeArray[0:simTime:deltaPlot], dataBundle[1][4][77,0:simTime:deltaPlot],'k:', label ='True', linewidth=2)
 ax3.plot(timeEstArray, dataBundle[1][12][77,:],'gx',markersize=3, label ='Est.')
 ax3.set(xlabel='time [min]',ylabel='$M_{37}$')
 ax3.minorticks_on()
 ax3.xaxis.set_major_locator(MultipleLocator(majorR))
 ax3.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax3.yaxis.set_tick_params(which='minor', bottom=False)
-ax3.grid(b=True, which='major', linestyle='-')
-ax3.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax3.grid(visible=True, which='major', linestyle='-')
+ax3.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 ax3.legend(loc='best')
 
 # saving figure 
@@ -536,8 +538,9 @@ if savePlot is True:
 #%% States and Parameter estimates
 fig14, (ax1, ax2) = plt.subplots(2, sharex=True)
 
-ax1.plot(timeArray[0:simTime:deltaPlot],distArray[1][0:simTime:deltaPlot],'k:', markersize=2,label='True', linewidth=4)
 ax1.plot(timeEstArray,dataBundle[2][16][0,:],'rx', markersize =2,label='Est.')
+ax1.plot(timeArray[0:simTime:deltaPlot],distArray[1][0:simTime:deltaPlot],'k:', markersize=2,label='True', linewidth=2)
+
 ax1.set(ylabel='$z_F$')  
 ax1.set_title('Parameters: Estimated vs. true')
 #ax1.legend(loc='best')
@@ -545,18 +548,19 @@ ax1.minorticks_on()
 ax1.xaxis.set_major_locator(MultipleLocator(majorR))
 ax1.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax1.yaxis.set_tick_params(which='minor', bottom=False)
-ax1.grid(b=True, which='major', linestyle='-')
-ax1.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax1.grid(visible=True, which='major', linestyle='-')
+ax1.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
-ax2.plot(timeArray[0:simTime:deltaPlot],distArray[3][0:simTime:deltaPlot],'k:', markersize=2,label='True', linewidth=4)
 ax2.plot(timeEstArray,dataBundle[2][16][1,:],'rx', markersize=2,label='Est.')
+ax2.plot(timeArray[0:simTime:deltaPlot],distArray[3][0:simTime:deltaPlot],'k:', markersize=2,label='True', linewidth=2)
+
 ax2.set(ylabel=r'$\alpha$', xlabel='time [min]')
 ax2.minorticks_on()
 ax2.xaxis.set_major_locator(MultipleLocator(majorR))
 ax2.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax2.yaxis.set_tick_params(which='minor', bottom=False)
-ax2.grid(b=True, which='major', linestyle='-')
-ax2.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax2.grid(visible=True, which='major', linestyle='-')
+ax2.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
 # saving figure 
 if savePlot is True:
@@ -566,35 +570,37 @@ if savePlot is True:
 fig15, (ax1, ax2, ax3) = plt.subplots(3, sharex=True)
 fig15.suptitle('States: Estimated vs. true')
 
-ax1.plot(timeArray[0:simTime:deltaPlot], dataBundle[2][4][34,0:simTime:deltaPlot],'k:', label ='True', linewidth=4)
 ax1.plot(timeEstArray, dataBundle[2][12][34,:],'rx',markersize=3, label ='Est.')
+ax1.plot(timeArray[0:simTime:deltaPlot], dataBundle[2][4][34,0:simTime:deltaPlot],'k:', label ='True', linewidth=2)
+
 ax1.set(ylabel='$x_{35}$')
 ax1.minorticks_on()
 ax1.xaxis.set_major_locator(MultipleLocator(majorR))
 ax1.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax1.yaxis.set_tick_params(which='minor', bottom=False)
-ax1.grid(b=True, which='major', linestyle='-')
-ax1.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax1.grid(visible=True, which='major', linestyle='-')
+ax1.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
-ax2.plot(timeArray[0:simTime:deltaPlot], dataBundle[2][4][2,0:simTime:deltaPlot],'k:', label ='True', linewidth=4)
 ax2.plot(timeEstArray, dataBundle[2][12][2,:],'rx',markersize=3,label ='Est.')
+ax2.plot(timeArray[0:simTime:deltaPlot], dataBundle[2][4][2,0:simTime:deltaPlot],'k:', label ='True', linewidth=2)
+
 ax2.set(ylabel='$x_3$')
 ax2.minorticks_on()
 ax2.xaxis.set_major_locator(MultipleLocator(majorR))
 ax2.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax2.yaxis.set_tick_params(which='minor', bottom=False)
-ax2.grid(b=True, which='major', linestyle='-')
-ax2.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax2.grid(visible=True, which='major', linestyle='-')
+ax2.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 
-ax3.plot(timeArray[0:simTime:deltaPlot], dataBundle[2][4][77,0:simTime:deltaPlot],'k:', label ='True', linewidth=4)
+ax3.plot(timeArray[0:simTime:deltaPlot], dataBundle[2][4][77,0:simTime:deltaPlot],'k:', label ='True', linewidth=2)
 ax3.plot(timeEstArray, dataBundle[2][12][77,:],'rx',markersize=3, label ='Est.')
 ax3.set(xlabel='time [min]',ylabel='$M_{37}$')
 ax3.minorticks_on()
 ax3.xaxis.set_major_locator(MultipleLocator(majorR))
 ax3.xaxis.set_minor_locator(MultipleLocator(minorR))
 ax3.yaxis.set_tick_params(which='minor', bottom=False)
-ax3.grid(b=True, which='major', linestyle='-')
-ax3.grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+ax3.grid(visible=True, which='major', linestyle='-')
+ax3.grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
 ax3.legend(loc='best')
 
 # saving figure 
@@ -614,13 +620,13 @@ columnTray = range(1,par['NT']+1)
 timePlot =30*12 
 
 for ii in range(nData): 
-    axs[ii].plot(dataBundle[ii][4][0:par['NT'],timePlot],columnTray,'k:',linewidth=4)
-    axs[ii].plot(dataBundle[ii][12][0:par['NT'],int(timePlot/12)],columnTray,colorMethod[ii],linewidth=4)
+    axs[ii].plot(dataBundle[ii][12][0:par['NT'],int(timePlot/12)],columnTray,colorMethod[ii],linewidth=2)
+    axs[ii].plot(dataBundle[ii][4][0:par['NT'],timePlot],columnTray,'k:',linewidth=2)
 
     axs[ii].minorticks_on()
     axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
-    axs[ii].grid(b=True, which='major', linestyle='-')
-    axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+    axs[ii].grid(visible=True, which='major', linestyle='-')
+    axs[ii].grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
     
     axs[ii].set(title=methodLabel[ii])
     axs[ii].set(xlabel='$x_A$ [-]')
@@ -638,13 +644,13 @@ fig17.suptitle('Molar holdup profile')
 plt.setp(axs, yticks=range(1,par['NT']+1,5),xticks=[0.4995, 0.501])
 
 for ii in range(nData): 
-    axs[ii].plot(dataBundle[ii][4][par['NT']:-1,timePlot],columnTray[:],'k:',linewidth=4)
-    axs[ii].plot(dataBundle[ii][12][par['NT']:-1,int(timePlot/12)],columnTray[:],colorMethod[ii],linewidth=4)
+    axs[ii].plot(dataBundle[ii][12][par['NT']:-1,int(timePlot/12)],columnTray[:],colorMethod[ii],linewidth=2)
+    axs[ii].plot(dataBundle[ii][4][par['NT']:-1,timePlot],columnTray[:],'k:',linewidth=2)
 
     axs[ii].minorticks_on()
     axs[ii].yaxis.set_tick_params(which='minor', bottom=False)
-    axs[ii].grid(b=True, which='major', linestyle='-')
-    axs[ii].grid(b=True, axis='x',which='minor',linestyle='-', alpha=0.3)
+    axs[ii].grid(visible=True, which='major', linestyle='-')
+    axs[ii].grid(visible=True, axis='x',which='minor',linestyle='-', alpha=0.3)
     axs[ii].set_xlim([0.499, 0.502])
     
     axs[ii].set(title=methodLabel[ii])
